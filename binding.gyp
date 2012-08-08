@@ -26,6 +26,9 @@
           'libraries': [
             '<!(pkg-config libzmq --libs 2>/dev/null || echo "")',
           ],
+          'libraries!': [
+            '<!(pkg-config libzmq --exists && echo "-lzmq" || echo "")',
+          ],
         }],
       ]
     }
